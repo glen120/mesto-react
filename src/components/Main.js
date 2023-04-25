@@ -9,6 +9,7 @@ export default function Main(props) {
     const [cards, setCards] = React.useState([]);
 
     React.useEffect(() => {
+        // Получение от сервера первичных данных
         Promise.all([api.getUserInfo(), api.getInitialCards()])
             .then(([userData, initialCards]) => {
                 setUserName(userData.name);

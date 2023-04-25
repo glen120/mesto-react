@@ -22,4 +22,4 @@ ___
     * применены хуки useState и useEffect
     * при создании компонентов использовался метод поднятия стейта
 ___
-[Ссылка на страницу в GitHub Pages](https://glen120.github.io/mesto)
+[Ссылка на страницу в GitHub Pages](https://glen120.github.io/mesto-react/)

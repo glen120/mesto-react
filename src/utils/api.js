@@ -54,14 +54,11 @@ class Api {
     }
 
     // Добавляем новую карточку
-    addNewCard({picture, link}) {
+    addNewCard(body) {
         return fetch(`${this._url}/cards`, {
             method: "POST",
             headers: this._headers,
-            body: JSON.stringify({
-                name: picture,
-                link
-            })
+            body: JSON.stringify(body)
         })
             .then((res) => this._checkResponse(res));
     }
@@ -75,19 +72,10 @@ class Api {
             .then((res) => this._checkResponse(res));
     }
 
-    // Ставим лайк карточке
-    addLike(cardId) {
+    // Ставим и убираем лайк карточке
+    changeLike(cardId, isLiked) {
         return fetch(`${this._url}/cards/${cardId}/likes`, {
-            method: "PUT",
-            headers: this._headers
-        })
-            .then((res) => this._checkResponse(res));
-    }
-
-    // Удаляем лайк карточке
-    removeLike(cardId) {
-        return fetch(`${this._url}/cards/${cardId}/likes`, {
-            method: "DELETE",
+            method: `${!isLiked ? "DELETE" : "PUT"}`,
             headers: this._headers
         })
             .then((res) => this._checkResponse(res));

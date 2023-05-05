@@ -1,7 +1,7 @@
 {
   "name": "mesto-react",
   "version": "0.1.0",
-  "homepage": "git@github.com:glen120/mesto-react",
+  "homepage": "https://glen120.github.io/mesto-react",
   "private": false,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
